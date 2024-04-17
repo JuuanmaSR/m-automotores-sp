@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vehicles",
+  "info": {
+    "singularName": "vehicle",
+    "pluralName": "vehicles",
+    "displayName": "Vehicle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "kilometers": {
+      "type": "biginteger",
+      "required": true,
+      "min": "0"
+    },
+    "year": {
+      "type": "biginteger",
+      "required": true
+    },
+    "color": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand.brand"
+    },
+    "model": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::model.model"
+    },
+    "price": {
+      "type": "biginteger",
+      "min": "0",
+      "required": true
+    }
+  }
+}
